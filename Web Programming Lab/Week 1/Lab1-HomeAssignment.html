@@ -1,14 +1,3 @@
-# 220962063 - Sambhav Nath Jain
-Home Assignment - WEEK 1
-<br>
-Date: 14 January 2025 
-<br>
-Time: 11:35PM
-
-<b>Question: </b>
-<img src="HWQn.png">
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,8 +98,71 @@ Time: 11:35PM
         </fieldset>
 
     </form>
+
+    <script>
+        function toggleOtherDiet() {
+            const otherDietCheckbox = document.getElementById('otherDiet');
+            const otherDietText = document.getElementById('otherDietText');
+            otherDietText.disabled = !otherDietCheckbox.checked;
+        }
+    </script>
 </body>
 </html>
-```
 
-<img src="HWQn-Output.png"  >
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+    <h1>Conference Registration Form</h1>
+    <h3>Participant Details</h3>
+    <form>
+        <label for="name">Full Name</label>
+        <br>
+        <input type="name", placeholder="Enter your full name." name="Name">
+        <br>
+        <br>
+        
+        <label for="email">Email</label>
+        <br>
+        <input type="email" placeholder="example@domain.com" name="email">
+        <br>        
+        <br>
+
+        <label for="number">Phone Number</label>
+        <br>
+        <input type="number" maxlength="10" placeholder="Mobile Number" name="phonenum">
+        <br>
+        <br>
+        
+        <label for="number">Phone Number</label>
+        <br>
+        <input type="number" maxlength="2", placeholder="Age (18-90) ">
+        <br>
+        <br>
+        
+        <h3>Select upto two events:</h3>
+        
+        <label for="cars">Choose a car:</label>
+        
+        <select id="cars" name="cars" multiple="2">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html> -->
