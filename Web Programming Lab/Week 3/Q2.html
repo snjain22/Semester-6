@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Greeting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #e0f7fa;
+        }
+        h1 {
+            color: #00796b;
+        }
+        #greeting {
+            font-size: 1.5em;
+            color: #004d40;
+        }
+        #clock {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <p id="greeting"></p>
+    <p id="clock"></p>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, "0");
+            const seconds = now.getSeconds().toString().padStart(2, "0");
+
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById("clock").innerText = `Current time: ${timeString}`;
+
+            let greeting;
+            if (hours < 12) {
+                greeting = "Good Morning!";
+            } else if (hours < 18) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
+            }
+            document.getElementById("greeting").innerText = greeting;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // Initialize immediately
+    </script>
+</body>
+</html>

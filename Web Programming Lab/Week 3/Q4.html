@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #eceff1;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .color-box {
+            width: 200px;
+            height: 100px;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose a Color</h1>
+    <form>
+        <input type="radio" name="color" value="red" onclick="changeColor('red')" checked> Red<br>
+        <input type="radio" name="color" value="green" onclick="changeColor('green')"> Green<br>
+        <input type="radio" name="color" value="blue" onclick="changeColor('blue')"> Blue<br>
+    </form>
+    <div id="colorBox" class="color-box" style="background-color: red;"></div>
+
+    <script>
+        function changeColor(color) {
+            document.getElementById('colorBox').style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>

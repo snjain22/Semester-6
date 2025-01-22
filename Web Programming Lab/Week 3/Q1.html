@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Online Quiz</h1>
+    <form id="quizForm">
+        <p>1. What is the capital of France?</p>
+        <input type="radio" name="q1" value="Paris"> Paris<br>
+        <input type="radio" name="q1" value="London"> London<br>
+        <input type="radio" name="q1" value="Berlin"> Berlin<br>
+        <p>2. Which language is used for web development?</p>
+        <input type="radio" name="q2" value="Python"> Python<br>
+        <input type="radio" name="q2" value="JavaScript"> JavaScript<br>
+        <input type="radio" name="q2" value="C++"> C++<br>
+        <button type="button" onclick="submitQuiz()">Submit</button>
+    </form>
+    <p id="result"></p>
 
+    <script>
+        function submitQuiz() {
+            const answers = {
+                q1: "Paris",
+                q2: "JavaScript"
+            };
+            let score = 0;
+            const form = document.getElementById("quizForm");
+            for (let key in answers) {
+                const selected = form[key].value;
+                if (selected === answers[key]) {
+                    score++;
+                }
+            }
+            document.getElementById("result").innerText = `Your score: ${score}/${Object.keys(answers).length}`;
+        }
+    </script>
+</body>
+</html>
+    
