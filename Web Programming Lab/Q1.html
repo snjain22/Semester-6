@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOTA Language Models</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .table-container {
+            width: 80%;
+            max-width: 1000px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            transition: transform 0.5s ease;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        tr {
+            transition: all 0.3s ease;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f1f4f3;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        tr:hover {
+            background-color: #e8f4f3;
+            transform: scale(1.01);
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        img {
+            max-height: 120px;
+            max-width: 200px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>🤖 Current SOTA Language Models</h1>
+    
+    <div class="table-container" id="tableContainer">
+        <table id="movableTable">
+            <tr>
+                <th>Serial No.</th>
+                <th>Company</th>
+                <th>Product</th>
+                <th>Logo</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>DeepSeek</td>
+                <td>R1</td>
+                <td><img src="https://bsmedia.business-standard.com/_media/bs/img/article/2025-01/27/full/1737959259-7169.png" alt="DeepSeek Logo"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>OpenAI</td>
+                <td>o1</td>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/512px-OpenAI_Logo.svg.png" alt="OpenAI Logo"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Anthropic</td>
+                <td>Claude 3.5 Sonnet</td>
+                <td><img src="https://nationalcioreview.com/wp-content/uploads/2024/10/AdobeStock_906973867_Editorial_Use_Only-1024x610.jpeg" alt="Anthropic Logo"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="button-container">
+        <button id="moveLeft">⬅️ Move Left</button>
+        <button id="moveRight">➡️ Move Right</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let translateX = 0;
+            const moveDistance = 200;
+
+            $('#moveLeft').click(function() {
+                translateX -= moveDistance;
+                $('#movableTable').css('transform', `translateX(${translateX}px)`);
+            });
+
+            $('#moveRight').click(function() {
+                translateX += moveDistance;
+                $('#movableTable').css('transform', `translateX(${translateX}px)`);
+            });
+        });
+    </script>
+</body>
+</html>
