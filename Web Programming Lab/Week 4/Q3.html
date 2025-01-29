@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birthday Card Designer</title>
+    <style>
+        #card {
+            width: 300px;
+            height: 400px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        img {
+            width: 100px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Design Your Birthday Card</h2>
+    <label>Choose a background color:</label>
+    <select id="bgColor">
+        <option value="yellow">Yellow</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
+    <br>
+    <label>Choose a font:</label>
+    <select id="font">
+        <option value="Verdana">Verdana</option>
+        <option value="Arial">Arial</option>
+        <option value="Times New Roman">Times New Roman</option>
+    </select>
+    <br>
+    <label>Specify a numeric font size:</label>
+    <input type="number" id="fontSize" value="25">
+    <br>
+    <label>Choose a border style:</label>
+    <select id="borderStyle">
+        <option value="none">None</option>
+        <option value="double">Double</option>
+        <option value="solid">Solid</option>
+    </select>
+    <br>
+    <input type="checkbox" id="addImage"> Add the Default Picture
+    <br>
+    <label>Enter the greeting text below:</label>
+    <textarea id="greetingText">Happy Birthday, and many more</textarea>
+    <br>
+    <button onclick="updateCard()">Update</button>
+    
+    <div id="card">
+        <p id="greeting">Happy Birthday, and many more</p>
+        <img id="cakeImage" src="https://nationalcioreview.com/wp-content/uploads/2024/10/AdobeStock_906973867_Editorial_Use_Only-1024x610.jpeg" style="display: none;">
+    </div>
+    
+    <script>
+        function updateCard() {
+            let card = document.getElementById("card");
+            let greeting = document.getElementById("greeting");
+            let image = document.getElementById("cakeImage");
+            
+            card.style.backgroundColor = document.getElementById("bgColor").value;
+            greeting.style.fontFamily = document.getElementById("font").value;
+            greeting.style.fontSize = document.getElementById("fontSize").value + "px";
+            card.style.borderStyle = document.getElementById("borderStyle").value;
+            
+            greeting.textContent = document.getElementById("greetingText").value;
+            
+            if (document.getElementById("addImage").checked) {
+                image.style.display = "block";
+            } else {
+                image.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
